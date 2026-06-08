@@ -1,0 +1,76 @@
+/* Esto asegura que el fondo morado cubra TODA la ventana del navegador */
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh hace que ocupe el 100% del alto visual */
+    min-height: 100vh;
+    /* Fondo radial profesional */
+    background: radial-gradient(circle at center, #480ca8 0%, #10002b 100%);
+    width: 100%;
+  }
+  
+  .login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    width: 90%; /* Ajuste para móviles */
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  
+  h2 { margin-bottom: 5px; color: #10002b; }
+  p { color: #666; margin-bottom: 30px; font-size: 0.9rem; }
+  
+  .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #7b2cbf;
+    outline: none;
+    box-shadow: 0 0 8px rgba(123, 44, 191, 0.3);
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #480ca8, #7b2cbf);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    margin-top: 10px;
+  }
+  
+  .login-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }

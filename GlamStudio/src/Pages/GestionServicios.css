@@ -1,0 +1,330 @@
+/* ── GestionServicios.css ── */
+
+.gs-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a2e;
+}
+
+/* ── Header ── */
+.gs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.gs-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #831843;
+  letter-spacing: -0.5px;
+}
+.gs-subtitle {
+  font-size: 1rem;
+  color: #9d174d;
+  margin: 4px 0 0;
+  font-weight: 500;
+}
+
+/* ── Stats ── */
+.gs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.gs-stat-card {
+  background: #fdf2f8;
+  border: 1px solid #f9a8d4;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gs-stat-label {
+  font-size: 0.82rem;
+  color: #6b21a8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.gs-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #831843;
+}
+
+/* ── Search ── */
+.gs-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.gs-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.gs-search {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.4rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+.gs-search:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+/* ── Table ── */
+.gs-table-wrap {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+.gs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.gs-table thead tr {
+  background: #fce7f3;
+}
+.gs-table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #6b21a8;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 2px solid #f9a8d4;
+  background: #fce7f3;
+}
+.gs-table tbody tr {
+  border-bottom: 1px solid #fce7f3;
+  transition: background 0.15s;
+}
+.gs-table tbody tr:last-child {
+  border-bottom: none;
+}
+.gs-table tbody tr:hover {
+  background: #fff7fb;
+}
+.gs-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+.gs-td-id {
+  color: #d1d5db;
+  font-size: 0.8rem;
+  width: 50px;
+  font-weight: 600;
+}
+.gs-td-nombre {
+  font-weight: 500;
+  color: #1a1a2e;
+}
+.gs-td-precio {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #059669;
+}
+.gs-td-actions {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+.gs-empty {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* ── Buttons ── */
+.gs-btn-primary {
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.gs-btn-primary:hover {
+  background: #db2777;
+}
+.gs-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.gs-btn-edit {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gs-btn-edit:hover {
+  background: #dbeafe;
+}
+
+.gs-btn-delete {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gs-btn-delete:hover {
+  background: #fee2e2;
+}
+
+.gs-btn-cancel {
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gs-btn-cancel:hover {
+  background: #f9fafb;
+}
+
+/* ── Modal ── */
+.gs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+}
+.gs-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 430px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+.gs-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.gs-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a2e;
+}
+.gs-modal-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.gs-modal-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.gs-field {
+  margin-bottom: 1rem;
+}
+.gs-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+.gs-field input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  color: #1a1a2e;
+}
+.gs-field input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+.gs-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.gs-error {
+  color: #dc2626;
+  font-size: 0.83rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Toast ── */
+.gs-toast {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: gsToastIn 0.25s ease;
+  z-index: 1000;
+}
+@keyframes gsToastIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,37 @@
+:root {
+    --dorado: #e6c27a;
+    --dorado-hover: #d4b06a;
+    --cafe-claro: #f5eee6;
+    --cafe-texto: #6b4f3b;
+}
+
+/* Fondo general */
+body {
+    background-color: var(--cafe-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--cafe-texto);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+}
+
+/* Hover elegante */
+.card:hover {
+    background-color: var(--dorado);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Texto */
+.card-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}

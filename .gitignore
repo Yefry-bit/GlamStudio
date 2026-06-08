@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+build/
+.eslintcache
+
+# .NET / C#
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.db
+*.log

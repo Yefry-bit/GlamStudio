@@ -1,0 +1,62 @@
+:root {
+    --primary: #c9a84c;
+    --primary-hover: #b8933e;
+    --primary-light: #f5ead0;
+    --bg: #faf6f0;
+    --text-dark: #3d2c1e;
+    --text-medium: #6b4f3b;
+    --white: #ffffff;
+    --border: #e8dccb;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*======= HEADER ========*/
+.gs-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.gs-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.gs-logo-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.gs-brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+.gs-page-title {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    font-weight: 400;
+    text-align: center;
+}
