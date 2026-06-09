@@ -4,6 +4,7 @@ import PaginaPrincipal from "./Pages/PaginaPrincipal";
 import CitasPage from "./Pages/CitasPage";
 import HistorialPage from "./Pages/HistorialPage";
 import GestionServicios from "./Pages/GestionServicios";
+import GestionEncargados from "./Pages/GestionEncargados";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/historial" element={<HistorialPage />} />
         <Route path="/citas" element={<CitasPage />} />
         <Route path="/gestion-servicios" element={<GestionServicios />} />
+        <Route path="/gestion-encargados" element={<GestionEncargados />} />
 
         <Route path="*" element={<div><h1>404 - Página no encontrada</h1></div>} />
       </Routes>

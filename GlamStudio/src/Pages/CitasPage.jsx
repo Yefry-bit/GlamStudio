@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./CitasPage.css";
 import { serviciosService } from "../Services/serviciosService";
+import { encargadosService } from "../Services/encargadosService";
 
 const toLocalISOString = (date) => {
   const pad = (n) => String(n).padStart(2, "0");
@@ -20,9 +21,9 @@ export default function CitasPage() {
   const [servicio, setServicio] = useState("");
   const [citas, setCitas] = useState([]);
   const [servicios, setServicios] = useState([]);
+  const [encargados, setEncargados] = useState([]);
   const [guardando, setGuardando] = useState(false);
 
-  const listaEncargados = ["Yefry Nuñez", "Rafael Nuñez", "Yeris Nuñez"];
   const API_URL = "http://localhost:5078/api/Citas";
 
   const getAuthHeader = () => {
@@ -48,16 +49,27 @@ export default function CitasPage() {
     try {
       const data = await serviciosService.getAll();
       setServicios(data);
-      // Selecciona el primer servicio por defecto
       if (data.length > 0) setServicio(String(data[0].idServicio));
     } catch (error) {
       console.error("Error al cargar servicios:", error);
     }
   };
 
+  const cargarEncargados = async () => {
+    try {
+      const data = await encargadosService.getAll();
+      // Solo mostrar barberos
+      const barberos = data.filter((e) => e.rol === "Barbero");
+      setEncargados(barberos);
+    } catch (error) {
+      console.error("Error al cargar encargados:", error);
+    }
+  };
+
   useEffect(() => {
     cargarCitas();
     cargarServicios();
+    cargarEncargados();
   }, []);
 
   const handleGuardar = async (e) => {
@@ -112,7 +124,7 @@ export default function CitasPage() {
       setEncargado("");
       setFecha(new Date());
       cargarCitas();
-      cargarServicios(); // Refresca servicios también
+      cargarServicios();
     } catch (error) {
       console.error(error);
       alert("❌ " + error.message);
@@ -127,9 +139,11 @@ export default function CitasPage() {
 
       <form className="form-container" onSubmit={handleGuardar}>
         <select value={encargado} onChange={(e) => setEncargado(e.target.value)} required>
-          <option value=""> Seleccione encargado</option>
-          {listaEncargados.map((n) => (
-            <option key={n} value={n}>{n}</option>
+          <option value="">Seleccione encargado</option>
+          {encargados.map((enc) => (
+            <option key={enc.idUsuario} value={enc.nombre}>
+              {enc.nombre}
+            </option>
           ))}
         </select>
 
@@ -162,9 +176,8 @@ export default function CitasPage() {
           customInput={<input className="custom-input" />}
         />
 
-        {/* Servicios cargados dinámicamente desde la API */}
         <select value={servicio} onChange={(e) => setServicio(e.target.value)} required>
-          <option value=""> Seleccione servicio</option>
+          <option value="">Seleccione servicio</option>
           {servicios.map((s) => (
             <option key={s.idServicio} value={String(s.idServicio)}>
               {s.nombre} — ${s.precio.toLocaleString("es-CO")}

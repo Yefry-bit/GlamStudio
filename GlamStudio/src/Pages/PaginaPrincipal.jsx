@@ -3,20 +3,19 @@ import "./PaginaPrincipal.css";
 
 function PaginaPrincipal() {
   const menu = [
-      { id: 1, title: "Agenda de Citas", icon: "📅", ruta: "/citas" },
-      { id: 2, title: "Gestión Clientes", icon: "👥", ruta: null },
-      { id: 3, title: "Gestión Servicios", icon: "✂️", ruta: "/gestion-servicios" },
-      { id: 4, title: "Historial", icon: "📋", ruta: "/historial" }
-    ];
+    { id: 1, title: "Agenda de Citas",     icon: "📅", ruta: "/citas" },
+    { id: 2, title: "Gestión Encargados",  icon: "👥", ruta: "/gestion-encargados" },
+    { id: 3, title: "Gestión Servicios",   icon: "✂️", ruta: "/gestion-servicios" },
+    { id: 4, title: "Historial",           icon: "📋", ruta: "/historial" },
+  ];
 
   return (
     <div className="main-wrapper">
-      {/* Título estilizado sin emojis */}
       <div className="brand-container">
         <h1 className="glam-title">GLAM STUDIO</h1>
         <div className="title-underline"></div>
       </div>
-      
+
       <p className="admin-subtitle">PANEL DE ADMINISTRACIÓN</p>
 
       <div className="menu-grid">
@@ -26,7 +25,7 @@ function PaginaPrincipal() {
             <h5 className="card-title">{item.title}</h5>
 
             {item.ruta ? (
-              <Link to={item.ruta} style={{ textDecoration: 'none' }}>
+              <Link to={item.ruta} style={{ textDecoration: "none" }}>
                 <button className="btn-main">Abrir</button>
               </Link>
             ) : (
@@ -42,3 +41,4 @@ function PaginaPrincipal() {
 }
 
 export default PaginaPrincipal;
+
