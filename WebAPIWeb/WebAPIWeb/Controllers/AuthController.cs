@@ -22,8 +22,8 @@ namespace WebAPIWeb.Controllers
         [HttpPost("register")]
         public IActionResult Register(Usuario usuario)
         {
-            if (_context.Usuario.Any(u => u.Username == usuario.Username))
-                return BadRequest("El usuario ya existe");
+            if (!string.IsNullOrEmpty(usuario.Username) && _context.Usuario.Any(u => u.Username == usuario.Username))
+    return BadRequest("El usuario ya existe");
 
             _context.Usuario.Add(usuario);
             _context.SaveChanges();
