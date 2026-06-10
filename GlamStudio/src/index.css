@@ -9,22 +9,29 @@
   --shadow: rgba(0, 0, 0, 0.2) 0 10px 25px -5px;
 }
 
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   background: var(--bg-gradient);
   min-height: 100vh;
   font-family: system-ui, sans-serif;
   color: #333;
 }
 
+/* ✅ Root en columna para que el navbar ocupe todo el ancho arriba */
 #root {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-/* --- Componentes --- */
+/* ✅ El login sigue centrado gracias a su propio CSS */
+
+/* --- Componentes globales --- */
 .card {
   background: var(--bg);
   padding: 30px;
@@ -41,7 +48,6 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--code-bg);
-  box-sizing: border-box;
 }
 
 button {
@@ -56,7 +62,6 @@ button {
   margin-top: 10px;
 }
 
-/* Estilo para las citas en la lista */
 .cita-item {
   background: rgba(255, 255, 255, 0.9);
   padding: 15px;

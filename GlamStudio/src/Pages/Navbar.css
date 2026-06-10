@@ -1,0 +1,81 @@
+.glam-navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 60px;
+    background: rgba(20, 10, 40, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(160, 100, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(120, 60, 220, 0.3);
+    box-sizing: border-box;
+  }
+  
+  .glam-navbar-brand {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  
+  .glam-navbar-brand span {
+    color: #b06bff;
+  }
+  
+  .glam-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .glam-btn-back {
+    background: transparent;
+    border: 1.5px solid rgba(160, 100, 255, 0.6);
+    color: #d4aaff;
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  
+  .glam-btn-back:hover {
+    background: rgba(160, 100, 255, 0.15);
+    border-color: #b06bff;
+    color: #ffffff;
+  }
+  
+  .glam-btn-logout {
+    background: linear-gradient(135deg, #7b2ff7, #a855f7);
+    border: none;
+    color: #ffffff;
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(123, 47, 247, 0.4);
+    white-space: nowrap;
+  }
+  
+  .glam-btn-logout:hover {
+    background: linear-gradient(135deg, #6a1fe0, #9333ea);
+    box-shadow: 0 4px 16px rgba(123, 47, 247, 0.6);
+    transform: translateY(-1px);
+  }

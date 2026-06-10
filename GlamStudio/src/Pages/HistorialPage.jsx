@@ -5,25 +5,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./HistorialPage.css";
+import { encargadosService } from "../Services/encargadosService";
 
-const ENCARGADOS = ["Yefry Nuñez", "Rafael Nuñez", "Yeris Nuñez"];
+// ❌ Eliminadas las constantes hardcodeadas ENCARGADOS y SERVICIOS
 
-const SERVICIOS = [
-  { id: 5, nombre: "✂️ Corte de cabello" },
-  { id: 6, nombre: "💈 Corte + Barba" },
-  { id: 7, nombre: "🧖 Mascarilla" },
-  { id: 8, nombre: "✨ Todo incluido" },
-];
-
-// Formatea un Date como "YYYY-MM-DDTHH:mm:ss" sin conversión UTC
 const toLocalISOString = (date) => {
   const pad = (n) => String(n).padStart(2, "0");
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:00`;
 };
 
-// Parsea la fecha del backend sumándole el offset para mostrarla correctamente
 const parseFechaBackend = (fechaStr) => {
-  // El backend guarda UTC pero es hora local — tratamos el string como local
   const s = fechaStr.endsWith("Z") ? fechaStr.slice(0, -1) : fechaStr;
   return new Date(s);
 };
@@ -32,11 +23,13 @@ export default function HistorialPage() {
   const API_URL = "http://localhost:5078/api/Citas";
   const navigate = useNavigate();
   const [citas, setCitas] = useState([]);
+  const [encargados, setEncargados] = useState([]);  // ✅ lista dinámica
+  const [servicios, setServicios] = useState([]);    // ✅ lista dinámica
   const [citaEditar, setCitaEditar] = useState({
     idCita: 0,
     personalEncargado: "",
     fechaHora: new Date(),
-    servicioId: 5,
+    servicioId: 0,
   });
 
   const modalRef = useRef(null);
@@ -69,7 +62,36 @@ export default function HistorialPage() {
     }
   };
 
-  useEffect(() => { cargarCitas(); }, []);
+  // ✅ Carga encargados desde la API (igual que CitasPage)
+  const cargarEncargados = async () => {
+    try {
+      const data = await encargadosService.getAll();
+      const barberos = data.filter((e) => e.rol === "Barbero");
+      setEncargados(barberos);
+    } catch (error) {
+      console.error("Error al cargar encargados:", error);
+    }
+  };
+
+  // ✅ Carga servicios desde la API
+  const cargarServicios = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await fetch("http://localhost:5078/api/Servicios", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      setServicios(Array.isArray(data) ? data : []);
+    } catch (error) {
+      console.error("Error al cargar servicios:", error);
+    }
+  };
+
+  useEffect(() => {
+    cargarCitas();
+    cargarEncargados();  // ✅
+    cargarServicios();   // ✅
+  }, []);
 
   const eliminarCita = async (id) => {
     if (!window.confirm("¿Desea eliminar esta cita?")) return;
@@ -96,7 +118,6 @@ export default function HistorialPage() {
   const abrirModalEditar = (cita) => {
     setCitaEditar({
       ...cita,
-      // Parseamos sin conversión UTC para que el DatePicker muestre la hora correcta
       fechaHora: parseFechaBackend(cita.fechaHora),
     });
     getModalInstance()?.show();
@@ -115,7 +136,6 @@ export default function HistorialPage() {
     try {
       const payload = {
         ...citaEditar,
-        // ✅ Enviamos hora local sin conversión UTC
         fechaHora: citaEditar.fechaHora instanceof Date
           ? toLocalISOString(citaEditar.fechaHora)
           : citaEditar.fechaHora,
@@ -168,7 +188,6 @@ export default function HistorialPage() {
                 <tr key={cita.idCita}>
                   <td>{cita.personalEncargado}</td>
                   <td>{cita.servicio?.nombre || "N/A"}</td>
-                  {/* ✅ Parseamos sin UTC para mostrar hora correcta */}
                   <td>{parseFechaBackend(cita.fechaHora).toLocaleString("es-ES")}</td>
                   <td>
                     <button
@@ -196,6 +215,8 @@ export default function HistorialPage() {
               <button type="button" className="btn-close" onClick={cerrarModal} aria-label="Cerrar" />
             </div>
             <div className="modal-body">
+
+              {/* ✅ Select dinámico de encargados desde la API */}
               <label className="form-label">Personal encargado</label>
               <select
                 className="form-select mb-3"
@@ -203,8 +224,10 @@ export default function HistorialPage() {
                 onChange={(e) => setCitaEditar({ ...citaEditar, personalEncargado: e.target.value })}
               >
                 <option value="">👤 Seleccione encargado</option>
-                {ENCARGADOS.map((n) => (
-                  <option key={n} value={n}>{n}</option>
+                {encargados.map((enc) => (
+                  <option key={enc.idUsuario} value={enc.nombre}>
+                    {enc.nombre}
+                  </option>
                 ))}
               </select>
 
@@ -222,18 +245,12 @@ export default function HistorialPage() {
                       ? citaEditar.fechaHora : new Date(citaEditar.fechaHora);
                     const slot = new Date(fechaBase);
                     slot.setHours(time.getHours(), time.getMinutes(), 0, 0);
-
-                    // Rango 8:00–20:00
                     const h = slot.getHours();
                     const m = slot.getMinutes();
                     if (h < 8 || (h === 20 && m > 0) || h > 20) return false;
-
-                    // Bloquea pasadas si es hoy
                     if (fechaBase.toDateString() === new Date().toDateString()) {
                       if (slot <= new Date()) return false;
                     }
-
-                    // Bloquea ocupados del mismo encargado
                     if (!citaEditar.personalEncargado) return true;
                     return !citas.some((c) => {
                       if (c.idCita === citaEditar.idCita) return false;
@@ -252,16 +269,21 @@ export default function HistorialPage() {
                 />
               </div>
 
+              {/* ✅ Select dinámico de servicios desde la API */}
               <label className="form-label">Servicio</label>
               <select
                 className="form-select"
                 value={citaEditar.servicioId}
                 onChange={(e) => setCitaEditar({ ...citaEditar, servicioId: parseInt(e.target.value) })}
               >
-                {SERVICIOS.map((s) => (
-                  <option key={s.id} value={s.id}>{s.nombre}</option>
+                <option value="">Seleccione servicio</option>
+                {servicios.map((s) => (
+                  <option key={s.idServicio} value={s.idServicio}>
+                    {s.nombre} — ${s.precio.toLocaleString("es-CO")}
+                  </option>
                 ))}
               </select>
+
             </div>
             <div className="modal-footer">
               <button className="btn btn-secondary" onClick={cerrarModal}>Cancelar</button>

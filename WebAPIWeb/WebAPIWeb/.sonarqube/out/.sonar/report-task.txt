@@ -1,0 +1,6 @@
+projectKey=WebAPIWeb
+serverUrl=http://localhost:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://localhost:9000/dashboard?id=WebAPIWeb
+ceTaskId=e87476e1-9e6c-4e99-87cc-1a8cc09971b4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e87476e1-9e6c-4e99-87cc-1a8cc09971b4
