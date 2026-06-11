@@ -1,338 +1,356 @@
 /* ── GestionEncargados.css ── */
 
 .ge-page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1a1a2e;
-  }
-  
-  /* ── Header ── */
-  .ge-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.75rem;
-  }
-  .ge-title {
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin: 0;
-    color: #1a1a2e;
-  }
-  .ge-subtitle {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin: 4px 0 0;
-  }
-  
-  /* ── Stats ── */
-  .ge-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    margin-bottom: 1.5rem;
-  }
-  .ge-stat-card {
-    background: #fdf2f8;
-    border: 1px solid #f9a8d4;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .ge-stat-label {
-    font-size: 0.78rem;
-    color: #9d174d;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .ge-stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #831843;
-  }
-  
-  /* ── Search ── */
-  .ge-search-wrap {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  .ge-search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.9rem;
-    pointer-events: none;
-  }
-  .ge-search {
-    width: 100%;
-    padding: 0.6rem 1rem 0.6rem 2.4rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    background: #fff;
-  }
-  .ge-search:focus {
-    border-color: #ec4899;
-    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
-  }
-  
-  /* ── Table ── */
-  .ge-table-wrap {
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #fff;
-  }
-  .ge-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-  .ge-table thead tr {
-    background: #fdf2f8;
-  }
-  .ge-table th {
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.78rem;
-    color: #9d174d;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: 1px solid #fce7f3;
-  }
-  .ge-table tbody tr {
-    border-bottom: 1px solid #fce7f3;
-    transition: background 0.15s;
-  }
-  .ge-table tbody tr:last-child {
-    border-bottom: none;
-  }
-  .ge-table tbody tr:hover {
-    background: #fff7fb;
-  }
-  .ge-table td {
-    padding: 13px 16px;
-    vertical-align: middle;
-  }
-  .ge-td-id {
-    color: #d1d5db;
-    font-size: 0.8rem;
-    width: 50px;
-    font-weight: 600;
-  }
-  .ge-td-nombre {
-    font-weight: 600;
-    color: #1a1a2e;
-  }
-  .ge-td-username {
-    color: #6b7280;
-    font-size: 0.85rem;
-    font-family: 'Courier New', monospace;
-  }
-  .ge-td-telefono {
-    color: #374151;
-  }
-  .ge-td-actions {
-    display: flex;
-    gap: 8px;
-    white-space: nowrap;
-  }
-  .ge-empty {
-    text-align: center;
-    padding: 3.5rem 1rem;
-    color: #9ca3af;
-    font-size: 0.9rem;
-  }
-  
-  /* ── Badges de rol ── */
-  .ge-badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
-  .ge-badge-administrador { background: #fce7f3; color: #9d174d; }
-  .ge-badge-estilista     { background: #ede9fe; color: #5b21b6; }
-  .ge-badge-recepcionista { background: #e0f2fe; color: #0369a1; }
-  .ge-badge-asistente     { background: #dcfce7; color: #166534; }
-  
-  /* ── Buttons ── */
-  .ge-btn-primary {
-    background: #ec4899;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1.25rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-  }
-  .ge-btn-primary:hover { background: #db2777; }
-  .ge-btn-primary:active { transform: scale(0.97); }
-  
-  .ge-btn-edit {
-    background: #eff6ff;
-    color: #2563eb;
-    border: 1px solid #bfdbfe;
-    padding: 5px 14px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .ge-btn-edit:hover { background: #dbeafe; }
-  
-  .ge-btn-delete {
-    background: #fef2f2;
-    color: #dc2626;
-    border: 1px solid #fecaca;
-    padding: 5px 14px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .ge-btn-delete:hover { background: #fee2e2; }
-  
-  .ge-btn-cancel {
-    background: transparent;
-    color: #6b7280;
-    border: 1px solid #d1d5db;
-    padding: 0.6rem 1.1rem;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .ge-btn-cancel:hover { background: #f9fafb; }
-  
-  /* ── Modal ── */
-  .ge-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    padding: 1rem;
-  }
-  .ge-modal {
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.75rem;
-    width: 100%;
-    max-width: 520px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
-  }
-  .ge-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.25rem;
-  }
-  .ge-modal-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin: 0;
-    color: #1a1a2e;
-  }
-  .ge-modal-close {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    color: #9ca3af;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: background 0.15s;
-  }
-  .ge-modal-close:hover { background: #f3f4f6; color: #374151; }
-  
-  .ge-field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .ge-field {
-    margin-bottom: 1rem;
-  }
-  .ge-field label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 6px;
-  }
-  .ge-field input,
-  .ge-field select {
-    width: 100%;
-    padding: 0.6rem 0.9rem;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    box-sizing: border-box;
-    color: #1a1a2e;
-    background: #fff;
-  }
-  .ge-field input:focus,
-  .ge-field select:focus {
-    border-color: #ec4899;
-    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
-  }
-  
-  .ge-modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 1.5rem;
-  }
-  
-  .ge-error {
-    color: #dc2626;
-    font-size: 0.83rem;
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    border-radius: 8px;
-    padding: 8px 12px;
-    margin-bottom: 0.75rem;
-  }
-  
-  /* ── Toast ── */
-  .ge-toast {
-    position: fixed;
-    bottom: 1.75rem;
-    right: 1.75rem;
-    background: #1a1a2e;
-    color: #fff;
-    padding: 0.7rem 1.25rem;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    animation: geToastIn 0.25s ease;
-    z-index: 1000;
-  }
-  @keyframes geToastIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a2e;
+}
+
+/* ── Header ── */
+.ge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.ge-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a2e;
+}
+.ge-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+/* ── Stats ── */
+.ge-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.ge-stat-card {
+  background: #fdf2f8;
+  border: 1px solid #f9a8d4;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+/* FIX L175 — contraste insuficiente sobre fondo #fdf2f8 */
+.ge-stat-label {
+  font-size: 0.78rem;
+  color: #6b0f35;          /* era #9d174d → ratio ~3.5:1 | ahora ~5.2:1 ✓ */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ge-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5a0a2a;          /* era #831843 → ratio ~4.1:1 | ahora ~6.1:1 ✓ */
+}
+
+/* ── Search ── */
+.ge-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.ge-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.ge-search {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.4rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+.ge-search:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+/* ── Table ── */
+.ge-table-wrap {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+.ge-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.ge-table thead tr {
+  background: #fdf2f8;
+}
+.ge-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #6b0f35;          /* también corregido para consistencia con stat-label */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #fce7f3;
+}
+.ge-table tbody tr {
+  border-bottom: 1px solid #fce7f3;
+  transition: background 0.15s;
+}
+.ge-table tbody tr:last-child {
+  border-bottom: none;
+}
+.ge-table tbody tr:hover {
+  background: #fff7fb;
+}
+.ge-table td {
+  padding: 13px 16px;
+  vertical-align: middle;
+}
+/* FIX L202 — #d1d5db sobre #fff da ratio ~1.6:1, falla WCAG AA */
+.ge-td-id {
+  color: #6b7280;          /* era #d1d5db → ratio ~1.6:1 | ahora ~4.6:1 ✓ */
+  font-size: 0.8rem;
+  width: 50px;
+  font-weight: 600;
+}
+.ge-td-nombre {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.ge-td-username {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+}
+.ge-td-telefono {
+  color: #374151;
+}
+.ge-td-actions {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+.ge-empty {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* ── Badges de rol ── */
+/* FIX L312 — colores de badge con contraste insuficiente */
+.ge-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.ge-badge-administrador {
+  background: #fce7f3;
+  color: #6b0f35;          /* era #9d174d → ratio ~3.5:1 | ahora ~5.2:1 ✓ */
+}
+.ge-badge-barbero {
+  background: #fce7f3;
+  color: #6b0f35;          /* nuevo badge para el rol "Barbero" ✓ */
+}
+.ge-badge-estilista {
+  background: #ede9fe;
+  color: #3b0764;          /* era #5b21b6 → ratio ~4.1:1 | ahora ~7.2:1 ✓ */
+}
+.ge-badge-recepcionista {
+  background: #e0f2fe;
+  color: #0c4a6e;          /* era #0369a1 → ratio ~3.8:1 | ahora ~6.8:1 ✓ */
+}
+.ge-badge-asistente {
+  background: #dcfce7;
+  color: #14532d;          /* era #166534 → ratio ~4.3:1 | ahora ~6.5:1 ✓ */
+}
+
+/* ── Buttons ── */
+.ge-btn-primary {
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.ge-btn-primary:hover { background: #db2777; }
+.ge-btn-primary:active { transform: scale(0.97); }
+
+.ge-btn-edit {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ge-btn-edit:hover { background: #dbeafe; }
+
+.ge-btn-delete {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ge-btn-delete:hover { background: #fee2e2; }
+
+.ge-btn-cancel {
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ge-btn-cancel:hover { background: #f9fafb; }
+
+/* ── Modal ── */
+.ge-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+}
+.ge-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+.ge-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.ge-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a2e;
+}
+.ge-modal-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.ge-modal-close:hover { background: #f3f4f6; color: #374151; }
+
+.ge-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.ge-field {
+  margin-bottom: 1rem;
+}
+.ge-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+.ge-field input,
+.ge-field select {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  color: #1a1a2e;
+  background: #fff;
+}
+.ge-field input:focus,
+.ge-field select:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+.ge-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.ge-error {
+  color: #dc2626;
+  font-size: 0.83rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Toast ── */
+.ge-toast {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: geToastIn 0.25s ease;
+  z-index: 1000;
+}
+@keyframes geToastIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

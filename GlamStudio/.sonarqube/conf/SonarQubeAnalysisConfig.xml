@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AnalysisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <SonarConfigDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf</SonarConfigDir>
-  <SonarOutputDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\out</SonarOutputDir>
-  <SonarBinDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\bin</SonarBinDir>
-  <SonarScannerWorkingDirectory>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb</SonarScannerWorkingDirectory>
+  <SonarConfigDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf</SonarConfigDir>
+  <SonarOutputDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\out</SonarOutputDir>
+  <SonarBinDir>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\bin</SonarBinDir>
+  <SonarScannerWorkingDirectory>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio</SonarScannerWorkingDirectory>
   <JavaExePath>C:\Users\Dell Vostro\.sonar\cache\39c5e23f3ce4d420663afba8ffde28034b72e2b3e240943dc2321bc1f912eef9\OpenJDK21U-jre_x64_windows_hotspot_21.0.9_10.zip_extracted\jdk-21.0.9+10-jre\bin\java.exe</JavaExePath>
   <EngineJarPath>C:\Users\Dell Vostro\.sonar\cache\be4b5f4037edfb16b715fe9e5ed10be4b2ae0de09349178d84b3cf8f53ca0f92\sonar-scanner-engine-community-12.37.0.3460.jar</EngineJarPath>
   <UseSonarScannerCli>false</UseSonarScannerCli>
@@ -18,7 +18,7 @@
     <ConfigSetting Id="TfsUri" />
     <ConfigSetting Id="VsCoverageConverterToolPath" />
     <ConfigSetting Id="UnchangedFilesPath" />
-    <ConfigSetting Id="sonar.pullrequest.cache.basepath" Value="C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb" />
+    <ConfigSetting Id="sonar.pullrequest.cache.basepath" Value="C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio" />
     <ConfigSetting Id="settings.file.path" Value="C:\Users\Dell Vostro\.dotnet\tools\.store\dotnet-sonarscanner\11.2.1\dotnet-sonarscanner\11.2.1\tools\netcoreapp3.1\any\SonarQube.Analysis.xml" />
   </AdditionalConfig>
   <ServerSettings>
@@ -170,8 +170,8 @@
   <AnalyzersSettings>
     <AnalyzerSettings>
       <Language>cs</Language>
-      <RulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\Sonar-cs.ruleset</RulesetPath>
-      <DeactivatedRulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\Sonar-cs-none.ruleset</DeactivatedRulesetPath>
+      <RulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\Sonar-cs.ruleset</RulesetPath>
+      <DeactivatedRulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\Sonar-cs-none.ruleset</DeactivatedRulesetPath>
       <AnalyzerPlugins>
         <AnalyzerPlugin Key="csharp" Version="10.27.0.140913" StaticResourceName="SonarAnalyzer-csharp-10.27.0.140913.zip">
           <AssemblyPaths>
@@ -184,13 +184,13 @@
         </AnalyzerPlugin>
       </AnalyzerPlugins>
       <AdditionalFilePaths>
-        <Path>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\cs\SonarLint.xml</Path>
+        <Path>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\cs\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
     <AnalyzerSettings>
       <Language>vbnet</Language>
-      <RulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\Sonar-vbnet.ruleset</RulesetPath>
-      <DeactivatedRulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\Sonar-vbnet-none.ruleset</DeactivatedRulesetPath>
+      <RulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\Sonar-vbnet.ruleset</RulesetPath>
+      <DeactivatedRulesetPath>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\Sonar-vbnet-none.ruleset</DeactivatedRulesetPath>
       <AnalyzerPlugins>
         <AnalyzerPlugin Key="vbnet" Version="10.27.0.140913" StaticResourceName="SonarAnalyzer-vbnet-10.27.0.140913.zip">
           <AssemblyPaths>
@@ -203,7 +203,7 @@
         </AnalyzerPlugin>
       </AnalyzerPlugins>
       <AdditionalFilePaths>
-        <Path>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\.sonarqube\conf\vbnet\SonarLint.xml</Path>
+        <Path>C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\GlamStudio\.sonarqube\conf\vbnet\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
   </AnalyzersSettings>

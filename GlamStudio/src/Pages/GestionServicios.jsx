@@ -60,6 +60,10 @@ export default function GestionServicios() {
     setError("");
   }
 
+  function handleOverlayKeyDown(e) {
+    if (e.key === "Escape") closeModal();
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (!form.nombre.trim() || form.precio === "") {
@@ -69,7 +73,7 @@ export default function GestionServicios() {
     const payload = {
       idServicio: editingId ?? 0,
       nombre: form.nombre.trim(),
-      precio: parseFloat(form.precio),
+      precio: Number.parseFloat(form.precio),
     };
     try {
       if (editingId) {
@@ -87,7 +91,7 @@ export default function GestionServicios() {
   }
 
   async function handleDelete(id, nombre) {
-    if (!window.confirm(`¿Eliminar "${nombre}"?`)) return;
+    if (!globalThis.confirm(`¿Eliminar "${nombre}"?`)) return;
     try {
       await serviciosService.remove(id);
       showToast("✓ Servicio eliminado");
@@ -101,10 +105,52 @@ export default function GestionServicios() {
     s.nombre.toLowerCase().includes(search.toLowerCase())
   );
 
+  function renderContenidoTabla() {
+    if (loading) {
+      return <div className="gs-empty">Cargando servicios...</div>;
+    }
+    if (filtrados.length === 0) {
+      return <div className="gs-empty">No se encontraron servicios.</div>;
+    }
+    return (
+      <table className="gs-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filtrados.map((s) => (
+            <tr key={s.idServicio}>
+              <td className="gs-td-id">{s.idServicio}</td>
+              <td className="gs-td-nombre">{s.nombre}</td>
+              <td className="gs-td-precio">
+                ${s.precio.toLocaleString("es-CO")}
+              </td>
+              <td className="gs-td-actions">
+                <button className="gs-btn-edit" onClick={() => openEdit(s)}>
+                  ✏️ Editar
+                </button>
+                <button
+                  className="gs-btn-delete"
+                  onClick={() => handleDelete(s.idServicio, s.nombre)}
+                >
+                  🗑️ Eliminar
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+
   return (
     <div className="gs-page">
 
-      {/* Header */}
       <div className="gs-header">
         <div className="gs-header-text">
           <h1 className="gs-title">Gestión de Servicios</h1>
@@ -115,7 +161,6 @@ export default function GestionServicios() {
         </button>
       </div>
 
-      {/* Stats */}
       <div className="gs-stats">
         <div className="gs-stat-card">
           <span className="gs-stat-label">Total servicios</span>
@@ -125,9 +170,7 @@ export default function GestionServicios() {
           <span className="gs-stat-label">Precio promedio</span>
           <span className="gs-stat-value">
             {servicios.length
-              ? `$${(
-                  servicios.reduce((a, s) => a + s.precio, 0) / servicios.length
-                ).toLocaleString("es-CO", { maximumFractionDigits: 0 })}`
+              ? `$${(servicios.reduce((a, s) => a + s.precio, 0) / servicios.length).toLocaleString("es-CO", { maximumFractionDigits: 0 })}`
               : "$0"}
           </span>
         </div>
@@ -141,7 +184,6 @@ export default function GestionServicios() {
         </div>
       </div>
 
-      {/* Buscador */}
       <div className="gs-search-wrap">
         <span className="gs-search-icon">🔍</span>
         <input
@@ -153,60 +195,20 @@ export default function GestionServicios() {
         />
       </div>
 
-      {/* Tabla */}
       <div className="gs-table-wrap">
-        {loading ? (
-          <div className="gs-empty">Cargando servicios...</div>
-        ) : filtrados.length === 0 ? (
-          <div className="gs-empty">No se encontraron servicios.</div>
-        ) : (
-          <table className="gs-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtrados.map((s) => (
-                <tr key={s.idServicio}>
-                  <td className="gs-td-id">{s.idServicio}</td>
-                  <td className="gs-td-nombre">{s.nombre}</td>
-                  <td className="gs-td-precio">
-                    ${s.precio.toLocaleString("es-CO")}
-                  </td>
-                  <td className="gs-td-actions">
-                    <button
-                      className="gs-btn-edit"
-                      onClick={() => openEdit(s)}
-                    >
-                      ✏️ Editar
-                    </button>
-                    <button
-                      className="gs-btn-delete"
-                      onClick={() => handleDelete(s.idServicio, s.nombre)}
-                    >
-                      🗑️ Eliminar
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
+        {renderContenidoTabla()}
       </div>
 
-      {/* Modal */}
       {showModal && (
         <div
           className="gs-overlay"
+          aria-hidden="true"
           onClick={(e) => e.target === e.currentTarget && closeModal()}
+          onKeyDown={handleOverlayKeyDown}
         >
-          <div className="gs-modal">
+          <dialog className="gs-modal" open aria-labelledby="gs-modal-title">
             <div className="gs-modal-header">
-              <h2 className="gs-modal-title">
+              <h2 id="gs-modal-title" className="gs-modal-title">
                 {editingId ? "Editar servicio" : "Nuevo servicio"}
               </h2>
               <button className="gs-modal-close" onClick={closeModal}>✕</button>
@@ -241,11 +243,7 @@ export default function GestionServicios() {
               {error && <p className="gs-error">{error}</p>}
 
               <div className="gs-modal-actions">
-                <button
-                  type="button"
-                  className="gs-btn-cancel"
-                  onClick={closeModal}
-                >
+                <button type="button" className="gs-btn-cancel" onClick={closeModal}>
                   Cancelar
                 </button>
                 <button type="submit" className="gs-btn-primary">
@@ -253,11 +251,10 @@ export default function GestionServicios() {
                 </button>
               </div>
             </form>
-          </div>
+          </dialog>
         </div>
       )}
 
-      {/* Toast */}
       {toast && <div className="gs-toast">{toast}</div>}
     </div>
   );

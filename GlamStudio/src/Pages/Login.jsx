@@ -10,13 +10,9 @@ export default function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
-      // Llamada al servicio de autenticación
       await authService.login(usuario, password);
-      
-      // Redirección a la página principal tras el éxito
-      navigate("/principal"); 
+      navigate("/principal");
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
       alert("Usuario o contraseña incorrectos");
@@ -28,28 +24,27 @@ export default function LoginPage() {
       <form className="login-card" onSubmit={handleLogin}>
         <h2>Bienvenido</h2>
         <p>Inicia sesión para continuar</p>
-        
         <div className="input-group">
-          <label>Usuario</label>
-          <input 
-            type="text" 
+          <label htmlFor="usuario">Usuario</label>
+          <input
+            id="usuario"
+            type="text"
             placeholder="Escribe tu usuario"
             value={usuario}
             onChange={(e) => setUsuario(e.target.value)}
-            required 
+            required
           />
         </div>
-
         <div className="input-group">
-          <label>Contraseña</label>
-          <input 
-            type="password"  
+          <label htmlFor="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required 
+            required
           />
         </div>
-        
         <button type="submit" className="login-btn">Ingresar</button>
       </form>
     </div>

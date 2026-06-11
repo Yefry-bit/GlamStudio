@@ -58,7 +58,6 @@ export default function CitasPage() {
   const cargarEncargados = async () => {
     try {
       const data = await encargadosService.getAll();
-      // Solo mostrar barberos
       const barberos = data.filter((e) => e.rol === "Barbero");
       setEncargados(barberos);
     } catch (error) {
@@ -99,7 +98,7 @@ export default function CitasPage() {
     const nuevaCita = {
       personalEncargado: encargado,
       fechaHora: toLocalISOString(fecha),
-      servicioId: parseInt(servicio),
+      servicioId: Number.parseInt(servicio, 10), // ✅ fix: Number.parseInt
     };
 
     try {
@@ -112,7 +111,7 @@ export default function CitasPage() {
       if (res.status === 401) {
         localStorage.removeItem("token");
         alert("Tu sesión ha expirado. Inicia sesión nuevamente.");
-        window.location.href = "/";
+        globalThis.location.href = "/"; // ✅ fix: globalThis en lugar de window
         return;
       }
       if (!res.ok) {

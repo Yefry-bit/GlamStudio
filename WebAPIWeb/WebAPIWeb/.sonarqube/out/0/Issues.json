@@ -381,43 +381,6 @@
           }
         },
         {
-          "ruleId": "S6968",
-          "level": "warning",
-          "message": "Annotate this method with ProducesResponseType containing the return type for successful responses.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Controllers/AuthController.cs",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 30,
-                  "endLine": 23,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Controllers/AuthController.cs",
-                "region": {
-                  "startLine": 31,
-                  "startColumn": 20,
-                  "endLine": 31,
-                  "endColumn": 57
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null
-            }
-          }
-        },
-        {
           "ruleId": "S6964",
           "level": "warning",
           "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
@@ -481,24 +444,40 @@
           }
         },
         {
-          "ruleId": "CA1825",
-          "level": "note",
-          "message": "Evite las asignaciones de matriz de longitud cero innecesarias.  Use Array.Empty<string>() en su lugar.",
+          "ruleId": "S6968",
+          "level": "warning",
+          "message": "Annotate this method with ProducesResponseType containing the return type for successful responses.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Program.cs",
+                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Controllers/AuthController.cs",
                 "region": {
-                  "startLine": 47,
-                  "startColumn": 9,
-                  "endLine": 47,
-                  "endColumn": 25
+                  "startLine": 23,
+                  "startColumn": 30,
+                  "endLine": 23,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Controllers/AuthController.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 20,
+                  "endLine": 31,
+                  "endColumn": 57
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 1
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
           }
         },
         {
@@ -514,6 +493,27 @@
                   "startColumn": 60,
                   "endLine": 38,
                   "endColumn": 117
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1825",
+          "level": "note",
+          "message": "Evite las asignaciones de matriz de longitud cero innecesarias.  Use Array.Empty<string>() en su lugar.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Dell%20Vostro/Downloads/GlamStudio-main%20(1)/GlamStudio-main/WebAPIWeb/WebAPIWeb/Program.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 9,
+                  "endLine": 47,
+                  "endColumn": 25
                 }
               }
             }

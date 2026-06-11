@@ -10,7 +10,7 @@
     },
     {
       "key": "sonar.scanner.bootstrapStartTime",
-      "value": "1780974871000"
+      "value": "1781106365000"
     },
     {
       "key": "sonar.projectKey",
@@ -38,46 +38,46 @@
     },
     {
       "key": "sonar.modules",
-      "value": "6373E9C8-13CB-4D89-8C95-F65530B224B8"
+      "value": "242E61B6-7937-49B3-BA31-0739C123BB15"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.projectKey",
-      "value": "WebAPIWeb:6373E9C8-13CB-4D89-8C95-F65530B224B8"
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.projectKey",
+      "value": "WebAPIWeb:242E61B6-7937-49B3-BA31-0739C123BB15"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.projectName",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.projectName",
       "value": "WebAPIWeb"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.projectBaseDir",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.projectBaseDir",
       "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.working.directory",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.working.directory",
       "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\.sonarqube\\out\\.sonar\\mod0"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.sourceEncoding",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.sourceEncoding",
       "value": "utf-8"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.tests",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.tests",
       "value": ""
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.sources",
-      "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\AuthController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\CitasController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\EncargadosController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\ServiciosController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\WeatherForecastController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260606232654_InicialFinal.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260606232654_InicialFinal.Designer.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260609015941_AgregarCamposUsuario.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260609015941_AgregarCamposUsuario.Designer.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\ContextBDModelSnapshot.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Cita.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\ContextBD.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Servicio.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Usuario.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\UsuarioLogin.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Program.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Services\\JwtServices.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\WeatherForecast.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.GlobalUsings.g.cs,\"C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs\",C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.AssemblyInfo.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.MvcApplicationPartsAssemblyInfo.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\appsettings.Development.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\appsettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\WebAPIWeb.http,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Properties\\launchSettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\project.assets.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\WebAPIWeb.csproj.nuget.dgspec.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\appsettings.Development.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\appsettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.deps.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.runtimeconfig.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.staticwebassets.endpoints.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rjsmcshtml.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rjsmrazor.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rpswa.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\staticwebassets.build.endpoints.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\staticwebassets.build.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.sourcelink.json"
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.sources",
+      "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\AuthController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\CitasController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\EncargadosController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\ServiciosController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Controllers\\WeatherForecastController.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260606232654_InicialFinal.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260606232654_InicialFinal.Designer.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260609015941_AgregarCamposUsuario.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\20260609015941_AgregarCamposUsuario.Designer.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Migrations\\ContextBDModelSnapshot.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Cita.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\ContextBD.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Servicio.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\Usuario.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Models\\UsuarioLogin.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Program.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Services\\JwtServices.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\WeatherForecast.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.GlobalUsings.g.cs,\"C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs\",C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.AssemblyInfo.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.MvcApplicationPartsAssemblyInfo.cs,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\appsettings.Development.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\appsettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\global.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\WebAPIWeb.http,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\Properties\\launchSettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\project.assets.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\WebAPIWeb.csproj.nuget.dgspec.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\appsettings.Development.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\appsettings.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\global.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.deps.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.runtimeconfig.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\bin\\Debug\\net8.0\\WebAPIWeb.staticwebassets.endpoints.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rjsmcshtml.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rjsmrazor.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\rpswa.dswa.cache.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\staticwebassets.build.endpoints.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\staticwebassets.build.json,C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\obj\\Debug\\net8.0\\WebAPIWeb.sourcelink.json"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.cs.analyzer.projectOutPaths",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.cs.analyzer.projectOutPaths",
       "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\.sonarqube\\out\\0"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.cs.roslyn.reportFilePaths",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.cs.roslyn.reportFilePaths",
       "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\.sonarqube\\out\\0\\Issues.json"
     },
     {
-      "key": "6373E9C8-13CB-4D89-8C95-F65530B224B8.sonar.cs.scanner.telemetry",
+      "key": "242E61B6-7937-49B3-BA31-0739C123BB15.sonar.cs.scanner.telemetry",
       "value": "C:\\Users\\Dell Vostro\\Downloads\\GlamStudio-main (1)\\GlamStudio-main\\WebAPIWeb\\WebAPIWeb\\.sonarqube\\out\\0\\Telemetry.json"
     },
     {

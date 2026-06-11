@@ -7,8 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./HistorialPage.css";
 import { encargadosService } from "../Services/encargadosService";
 
-// ❌ Eliminadas las constantes hardcodeadas ENCARGADOS y SERVICIOS
-
 const toLocalISOString = (date) => {
   const pad = (n) => String(n).padStart(2, "0");
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:00`;
@@ -23,8 +21,8 @@ export default function HistorialPage() {
   const API_URL = "http://localhost:5078/api/Citas";
   const navigate = useNavigate();
   const [citas, setCitas] = useState([]);
-  const [encargados, setEncargados] = useState([]);  // ✅ lista dinámica
-  const [servicios, setServicios] = useState([]);    // ✅ lista dinámica
+  const [encargados, setEncargados] = useState([]);
+  const [servicios, setServicios] = useState([]);
   const [citaEditar, setCitaEditar] = useState({
     idCita: 0,
     personalEncargado: "",
@@ -34,12 +32,19 @@ export default function HistorialPage() {
 
   const modalRef = useRef(null);
 
-  const getModalInstance = () => {
-    if (!modalRef.current) return null;
-    return (
+  // ✅ fix: eliminada variable getModalInstance, lógica inlinada directamente
+  const showModal = () => {
+    if (!modalRef.current) return;
+    const instance =
       Modal.getInstance(modalRef.current) ||
-      new Modal(modalRef.current, { backdrop: "static" })
-    );
+      new Modal(modalRef.current, { backdrop: "static" });
+    instance.show();
+  };
+
+  const hideModal = () => {
+    if (!modalRef.current) return;
+    const instance = Modal.getInstance(modalRef.current);
+    instance?.hide();
   };
 
   const getToken = () => {
@@ -62,7 +67,6 @@ export default function HistorialPage() {
     }
   };
 
-  // ✅ Carga encargados desde la API (igual que CitasPage)
   const cargarEncargados = async () => {
     try {
       const data = await encargadosService.getAll();
@@ -73,7 +77,6 @@ export default function HistorialPage() {
     }
   };
 
-  // ✅ Carga servicios desde la API
   const cargarServicios = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -89,12 +92,12 @@ export default function HistorialPage() {
 
   useEffect(() => {
     cargarCitas();
-    cargarEncargados();  // ✅
-    cargarServicios();   // ✅
+    cargarEncargados();
+    cargarServicios();
   }, []);
 
   const eliminarCita = async (id) => {
-    if (!window.confirm("¿Desea eliminar esta cita?")) return;
+    if (!globalThis.confirm("¿Desea eliminar esta cita?")) return;
     const token = getToken();
     if (!token) return;
     try {
@@ -120,14 +123,14 @@ export default function HistorialPage() {
       ...cita,
       fechaHora: parseFechaBackend(cita.fechaHora),
     });
-    getModalInstance()?.show();
+    showModal(); // ✅ fix: usa showModal directo
   };
 
   const cerrarModal = () => {
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
-    getModalInstance()?.hide();
+    hideModal(); // ✅ fix: usa hideModal directo
   };
 
   const actualizarCita = async () => {
@@ -216,9 +219,9 @@ export default function HistorialPage() {
             </div>
             <div className="modal-body">
 
-              {/* ✅ Select dinámico de encargados desde la API */}
-              <label className="form-label">Personal encargado</label>
+              <label htmlFor="encargado-select" className="form-label">Personal encargado</label>
               <select
+                id="encargado-select"
                 className="form-select mb-3"
                 value={citaEditar.personalEncargado}
                 onChange={(e) => setCitaEditar({ ...citaEditar, personalEncargado: e.target.value })}
@@ -231,7 +234,7 @@ export default function HistorialPage() {
                 ))}
               </select>
 
-              <label className="form-label">Fecha y hora</label>
+              <label htmlFor="fecha-picker" className="form-label">Fecha y hora</label>
               <div className="mb-3">
                 <DatePicker
                   selected={citaEditar.fechaHora}
@@ -265,16 +268,16 @@ export default function HistorialPage() {
                       );
                     });
                   }}
-                  customInput={<input className="form-control" />}
+                  customInput={<input id="fecha-picker" className="form-control" />}
                 />
               </div>
 
-              {/* ✅ Select dinámico de servicios desde la API */}
-              <label className="form-label">Servicio</label>
+              <label htmlFor="servicio-select" className="form-label">Servicio</label>
               <select
+                id="servicio-select"
                 className="form-select"
                 value={citaEditar.servicioId}
-                onChange={(e) => setCitaEditar({ ...citaEditar, servicioId: parseInt(e.target.value) })}
+                onChange={(e) => setCitaEditar({ ...citaEditar, servicioId: Number.parseInt(e.target.value, 10) })}
               >
                 <option value="">Seleccione servicio</option>
                 {servicios.map((s) => (

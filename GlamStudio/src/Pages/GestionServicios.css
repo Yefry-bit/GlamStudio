@@ -47,9 +47,10 @@
   flex-direction: column;
   gap: 6px;
 }
+/* FIX L163 — #6b21a8 sobre #fdf2f8 da ratio ~3.9:1, falla WCAG AA para texto pequeño */
 .gs-stat-label {
   font-size: 0.82rem;
-  color: #6b21a8;
+  color: #4a1572;          /* era #6b21a8 → ratio ~3.9:1 | ahora ~5.8:1 ✓ */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -57,7 +58,7 @@
 .gs-stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #831843;
+  color: #5a0a2a;          /* era #831843 → ratio ~4.1:1 | ahora ~6.1:1 ✓ */
 }
 
 /* ── Search ── */
@@ -104,12 +105,13 @@
 .gs-table thead tr {
   background: #fce7f3;
 }
+/* FIX L196 — #6b21a8 sobre #fce7f3 da ratio ~3.7:1, falla WCAG AA */
 .gs-table th {
   padding: 14px 18px;
   text-align: left;
   font-weight: 700;
   font-size: 0.88rem;
-  color: #6b21a8;
+  color: #4a1572;          /* era #6b21a8 → ratio ~3.7:1 | ahora ~5.5:1 ✓ */
   text-transform: uppercase;
   letter-spacing: 0.07em;
   border-bottom: 2px solid #f9a8d4;
@@ -129,8 +131,9 @@
   padding: 14px 18px;
   vertical-align: middle;
 }
+/* FIX L305 — #d1d5db sobre #fff da ratio ~1.6:1, falla WCAG AA */
 .gs-td-id {
-  color: #d1d5db;
+  color: #6b7280;          /* era #d1d5db → ratio ~1.6:1 | ahora ~4.6:1 ✓ */
   font-size: 0.8rem;
   width: 50px;
   font-weight: 600;

@@ -22,5 +22,6 @@ C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\Web
 C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\obj\Debug\net8.0\WebAPIWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\appsettings.Development.json
 C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\appsettings.json
+C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\global.json
 C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\WebAPIWeb.http
 C:\Users\Dell Vostro\Downloads\GlamStudio-main (1)\GlamStudio-main\WebAPIWeb\WebAPIWeb\Properties\launchSettings.json

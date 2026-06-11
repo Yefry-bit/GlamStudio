@@ -89,7 +89,7 @@ export default function GestionEncargados() {
       telefono: form.telefono.trim(),
       rol: form.rol.trim(),
       username: form.username.trim(),
-      password: form.password.trim(),
+      password: form.password?.trim() ?? "",
     };
 
     try {
@@ -108,7 +108,7 @@ export default function GestionEncargados() {
   }
 
   async function handleDelete(id, nombre) {
-    if (!window.confirm(`¿Eliminar a "${nombre}"?`)) return;
+    if (!globalThis.confirm(`¿Eliminar a "${nombre}"?`)) return;
     try {
       await encargadosService.remove(id);
       showToast("✓ Encargado eliminado");
@@ -124,10 +124,67 @@ export default function GestionEncargados() {
       e.rol?.toLowerCase().includes(search.toLowerCase())
   );
 
+  function renderRolBadge(rol) {
+    if (!rol) return <span>—</span>;
+    return (
+      <span className={`ge-badge ge-badge-${rol.toLowerCase()}`}>
+        {rol}
+      </span>
+    );
+  }
+
+  function renderContenidoTabla() {
+    if (loading) {
+      return <div className="ge-empty">Cargando encargados...</div>;
+    }
+    if (filtrados.length === 0) {
+      return <div className="ge-empty">No se encontraron encargados.</div>;
+    }
+    return (
+      <table className="ge-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filtrados.map((enc) => (
+            <tr key={enc.idUsuario}>
+              <td className="ge-td-id">{enc.idUsuario}</td>
+              <td className="ge-td-nombre">{enc.nombre || "—"}</td>
+              <td className="ge-td-telefono">{enc.telefono || "—"}</td>
+              <td>{renderRolBadge(enc.rol)}</td>
+              <td className="ge-td-actions">
+                <button className="ge-btn-edit" onClick={() => openEdit(enc)}>
+                  ✏️ Editar
+                </button>
+                <button
+                  className="ge-btn-delete"
+                  onClick={() => handleDelete(enc.idUsuario, enc.nombre || enc.username)}
+                >
+                  🗑️ Eliminar
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+
+  function handleOverlayKeyDown(e) {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  }
+
   return (
     <div className="ge-page">
 
-      {/* Header */}
       <div className="ge-header">
         <div className="ge-header-text">
           <h1 className="ge-title">Gestión de Encargados</h1>
@@ -138,7 +195,6 @@ export default function GestionEncargados() {
         </button>
       </div>
 
-      {/* Stats */}
       <div className="ge-stats">
         <div className="ge-stat-card">
           <span className="ge-stat-label">Total encargados</span>
@@ -158,7 +214,6 @@ export default function GestionEncargados() {
         </div>
       </div>
 
-      {/* Buscador */}
       <div className="ge-search-wrap">
         <span className="ge-search-icon">🔍</span>
         <input
@@ -170,63 +225,24 @@ export default function GestionEncargados() {
         />
       </div>
 
-      {/* Tabla */}
       <div className="ge-table-wrap">
-        {loading ? (
-          <div className="ge-empty">Cargando encargados...</div>
-        ) : filtrados.length === 0 ? (
-          <div className="ge-empty">No se encontraron encargados.</div>
-        ) : (
-          <table className="ge-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Rol</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtrados.map((enc) => (
-                <tr key={enc.idUsuario}>
-                  <td className="ge-td-id">{enc.idUsuario}</td>
-                  <td className="ge-td-nombre">{enc.nombre || "—"}</td>
-                  <td className="ge-td-telefono">{enc.telefono || "—"}</td>
-                  <td>
-                    {enc.rol ? (
-                      <span className={`ge-badge ge-badge-${enc.rol.toLowerCase()}`}>
-                        {enc.rol}
-                      </span>
-                    ) : "—"}
-                  </td>
-                  <td className="ge-td-actions">
-                    <button className="ge-btn-edit" onClick={() => openEdit(enc)}>
-                      ✏️ Editar
-                    </button>
-                    <button
-                      className="ge-btn-delete"
-                      onClick={() => handleDelete(enc.idUsuario, enc.nombre || enc.username)}
-                    >
-                      🗑️ Eliminar
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
+        {renderContenidoTabla()}
       </div>
 
-      {/* Modal */}
       {showModal && (
-        <div
-          className="ge-overlay"
-          onClick={(e) => e.target === e.currentTarget && closeModal()}
-        >
-          <div className="ge-modal">
+      <div
+      className="ge-overlay"
+      aria-hidden="true"
+      onClick={(e) => e.target === e.currentTarget && closeModal()}
+      onKeyDown={handleOverlayKeyDown}
+    >
+          <dialog
+            className="ge-modal"
+            open
+            aria-labelledby="modal-title"
+          >
             <div className="ge-modal-header">
-              <h2 className="ge-modal-title">
+              <h2 id="modal-title" className="ge-modal-title">
                 {editingId ? "Editar encargado" : "Nuevo encargado"}
               </h2>
               <button className="ge-modal-close" onClick={closeModal}>✕</button>
@@ -286,11 +302,10 @@ export default function GestionEncargados() {
                 </button>
               </div>
             </form>
-          </div>
+          </dialog>
         </div>
       )}
 
-      {/* Toast */}
       {toast && <div className="ge-toast">{toast}</div>}
     </div>
   );
